@@ -58,6 +58,7 @@ namespace PCB
 
         private void BtnBrowseCpu_Click(object sender, EventArgs e)
         {
+            // Opening next form
             openChildForm(new FormBrowseCpu());
             hideSubmenu();
         }
