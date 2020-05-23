@@ -39,11 +39,6 @@ namespace PCB.AppClasses
                 // Filling the data table
                 adapter.Fill(dataTable);
             }
-            catch (Exception e)
-            {
-                // Error handling
-                throw;
-            }
             finally
             {
                 connection.Close();

@@ -48,11 +48,6 @@ namespace PCB.AppClasses
                 int rows = cmd.ExecuteNonQuery();
                 isSuccess = rows > 0 ? true : false;
             }
-            catch (Exception e)
-            {
-                // Error handling
-                throw;
-            }
             finally
             {
                 connection.Close();
@@ -90,11 +85,6 @@ namespace PCB.AppClasses
                 int rows = cmd.ExecuteNonQuery();
                 isSuccess = rows > 0 ? true : false;
             }
-            catch (Exception e)
-            {
-                // Error handling
-                throw;
-            }
             finally
             {
                 connection.Close();
@@ -121,11 +111,6 @@ namespace PCB.AppClasses
                 connection.Open();
                 int rows = cmd.ExecuteNonQuery();
                 isSuccess = rows > 0 ? true : false;
-            }
-            catch (Exception e)
-            {
-                // Error handling
-                throw;
             }
             finally
             {
