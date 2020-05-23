@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cpuBrowseGV = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.AddCpuButton = new System.Windows.Forms.Button();
+            this.CloseCpuBrowseBtn = new System.Windows.Forms.Button();
             this.labelCpuId = new System.Windows.Forms.Label();
             this.textBoxCpuId = new System.Windows.Forms.TextBox();
             this.labelCpuManufacturer = new System.Windows.Forms.Label();
@@ -53,19 +53,19 @@
             this.textBoxCpuPrice = new System.Windows.Forms.TextBox();
             this.labelCpuSearch = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpuBrowseGV)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // cpuBrowseGV
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cpuBrowseGV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 350);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(660, 160);
-            this.dataGridView1.TabIndex = 0;
+            this.cpuBrowseGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cpuBrowseGV.Location = new System.Drawing.Point(12, 350);
+            this.cpuBrowseGV.Name = "cpuBrowseGV";
+            this.cpuBrowseGV.Size = new System.Drawing.Size(660, 188);
+            this.cpuBrowseGV.TabIndex = 0;
             // 
             // button1
             // 
@@ -74,7 +74,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(597, 544);
+            this.button1.Location = new System.Drawing.Point(597, 560);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -88,42 +88,43 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(516, 544);
+            this.button2.Location = new System.Drawing.Point(516, 560);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // AddCpuButton
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(63)))), ((int)(((byte)(85)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(435, 544);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = false;
+            this.AddCpuButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddCpuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(63)))), ((int)(((byte)(85)))));
+            this.AddCpuButton.FlatAppearance.BorderSize = 0;
+            this.AddCpuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddCpuButton.ForeColor = System.Drawing.Color.White;
+            this.AddCpuButton.Location = new System.Drawing.Point(435, 560);
+            this.AddCpuButton.Name = "AddCpuButton";
+            this.AddCpuButton.Size = new System.Drawing.Size(75, 23);
+            this.AddCpuButton.TabIndex = 3;
+            this.AddCpuButton.Text = "Add";
+            this.AddCpuButton.UseVisualStyleBackColor = false;
+            this.AddCpuButton.Click += new System.EventHandler(this.AddCpuButton_Click);
             // 
-            // button4
+            // CloseCpuBrowseBtn
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(1, 1);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(23, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "X";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            this.CloseCpuBrowseBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.CloseCpuBrowseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CloseCpuBrowseBtn.FlatAppearance.BorderSize = 0;
+            this.CloseCpuBrowseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseCpuBrowseBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CloseCpuBrowseBtn.ForeColor = System.Drawing.Color.White;
+            this.CloseCpuBrowseBtn.Location = new System.Drawing.Point(1, 1);
+            this.CloseCpuBrowseBtn.Name = "CloseCpuBrowseBtn";
+            this.CloseCpuBrowseBtn.Size = new System.Drawing.Size(23, 23);
+            this.CloseCpuBrowseBtn.TabIndex = 4;
+            this.CloseCpuBrowseBtn.Text = "X";
+            this.CloseCpuBrowseBtn.UseVisualStyleBackColor = false;
+            this.CloseCpuBrowseBtn.Click += new System.EventHandler(this.CloseCpuBrowseBtn_Click);
             // 
             // labelCpuId
             // 
@@ -334,14 +335,15 @@
             this.Controls.Add(this.labelCpuManufacturer);
             this.Controls.Add(this.textBoxCpuId);
             this.Controls.Add(this.labelCpuId);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.CloseCpuBrowseBtn);
+            this.Controls.Add(this.AddCpuButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.cpuBrowseGV);
             this.Name = "FormBrowseCpu";
             this.Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormBrowseCpu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.cpuBrowseGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,11 +351,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView cpuBrowseGV;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button AddCpuButton;
+        private System.Windows.Forms.Button CloseCpuBrowseBtn;
         private System.Windows.Forms.Label labelCpuId;
         private System.Windows.Forms.TextBox textBoxCpuId;
         private System.Windows.Forms.Label labelCpuManufacturer;
