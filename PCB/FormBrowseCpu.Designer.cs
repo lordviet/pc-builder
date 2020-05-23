@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.cpuBrowseGV = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.DeleteCpuButton = new System.Windows.Forms.Button();
+            this.UpdateCpuButton = new System.Windows.Forms.Button();
             this.AddCpuButton = new System.Windows.Forms.Button();
             this.CloseCpuBrowseBtn = new System.Windows.Forms.Button();
             this.labelCpuId = new System.Windows.Forms.Label();
@@ -52,7 +52,8 @@
             this.textBoxCpuIntegratedGraphics = new System.Windows.Forms.TextBox();
             this.textBoxCpuPrice = new System.Windows.Forms.TextBox();
             this.labelCpuSearch = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBoxCpuSearch = new System.Windows.Forms.TextBox();
+            this.ClearCpuButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cpuBrowseGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,34 +67,37 @@
             this.cpuBrowseGV.Name = "cpuBrowseGV";
             this.cpuBrowseGV.Size = new System.Drawing.Size(660, 188);
             this.cpuBrowseGV.TabIndex = 0;
+            this.cpuBrowseGV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CpuBrowseGV_RowHeaderMouseClick);
             // 
-            // button1
+            // DeleteCpuButton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(597, 560);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = false;
+            this.DeleteCpuButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeleteCpuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.DeleteCpuButton.FlatAppearance.BorderSize = 0;
+            this.DeleteCpuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteCpuButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteCpuButton.Location = new System.Drawing.Point(515, 563);
+            this.DeleteCpuButton.Name = "DeleteCpuButton";
+            this.DeleteCpuButton.Size = new System.Drawing.Size(75, 23);
+            this.DeleteCpuButton.TabIndex = 1;
+            this.DeleteCpuButton.Text = "Delete";
+            this.DeleteCpuButton.UseVisualStyleBackColor = false;
+            this.DeleteCpuButton.Click += new System.EventHandler(this.DeleteCpuButton_Click);
             // 
-            // button2
+            // UpdateCpuButton
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(516, 560);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = false;
+            this.UpdateCpuButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.UpdateCpuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.UpdateCpuButton.FlatAppearance.BorderSize = 0;
+            this.UpdateCpuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateCpuButton.ForeColor = System.Drawing.Color.White;
+            this.UpdateCpuButton.Location = new System.Drawing.Point(434, 563);
+            this.UpdateCpuButton.Name = "UpdateCpuButton";
+            this.UpdateCpuButton.Size = new System.Drawing.Size(75, 23);
+            this.UpdateCpuButton.TabIndex = 2;
+            this.UpdateCpuButton.Text = "Update";
+            this.UpdateCpuButton.UseVisualStyleBackColor = false;
+            this.UpdateCpuButton.Click += new System.EventHandler(this.UpdateCpuButton_Click);
             // 
             // AddCpuButton
             // 
@@ -102,7 +106,7 @@
             this.AddCpuButton.FlatAppearance.BorderSize = 0;
             this.AddCpuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddCpuButton.ForeColor = System.Drawing.Color.White;
-            this.AddCpuButton.Location = new System.Drawing.Point(435, 560);
+            this.AddCpuButton.Location = new System.Drawing.Point(353, 563);
             this.AddCpuButton.Name = "AddCpuButton";
             this.AddCpuButton.Size = new System.Drawing.Size(75, 23);
             this.AddCpuButton.TabIndex = 3;
@@ -299,15 +303,31 @@
             this.labelCpuSearch.TabIndex = 23;
             this.labelCpuSearch.Text = "Search";
             // 
-            // textBox10
+            // textBoxCpuSearch
             // 
-            this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.textBoxCpuSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox10.Location = new System.Drawing.Point(89, 317);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(583, 20);
-            this.textBox10.TabIndex = 24;
+            this.textBoxCpuSearch.Location = new System.Drawing.Point(89, 317);
+            this.textBoxCpuSearch.Name = "textBoxCpuSearch";
+            this.textBoxCpuSearch.Size = new System.Drawing.Size(583, 20);
+            this.textBoxCpuSearch.TabIndex = 24;
+            this.textBoxCpuSearch.TextChanged += new System.EventHandler(this.TextBoxCpuSearch_TextChanged);
+            // 
+            // ClearCpuButton
+            // 
+            this.ClearCpuButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ClearCpuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.ClearCpuButton.FlatAppearance.BorderSize = 0;
+            this.ClearCpuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearCpuButton.ForeColor = System.Drawing.Color.White;
+            this.ClearCpuButton.Location = new System.Drawing.Point(597, 563);
+            this.ClearCpuButton.Name = "ClearCpuButton";
+            this.ClearCpuButton.Size = new System.Drawing.Size(75, 23);
+            this.ClearCpuButton.TabIndex = 25;
+            this.ClearCpuButton.Text = "Clear";
+            this.ClearCpuButton.UseVisualStyleBackColor = false;
+            this.ClearCpuButton.Click += new System.EventHandler(this.ClearCpuButton_Click);
             // 
             // FormBrowseCpu
             // 
@@ -315,7 +335,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(684, 611);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.ClearCpuButton);
+            this.Controls.Add(this.textBoxCpuSearch);
             this.Controls.Add(this.labelCpuSearch);
             this.Controls.Add(this.textBoxCpuPrice);
             this.Controls.Add(this.textBoxCpuIntegratedGraphics);
@@ -337,8 +358,8 @@
             this.Controls.Add(this.labelCpuId);
             this.Controls.Add(this.CloseCpuBrowseBtn);
             this.Controls.Add(this.AddCpuButton);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.UpdateCpuButton);
+            this.Controls.Add(this.DeleteCpuButton);
             this.Controls.Add(this.cpuBrowseGV);
             this.Name = "FormBrowseCpu";
             this.Text = "Form2";
@@ -352,8 +373,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView cpuBrowseGV;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button DeleteCpuButton;
+        private System.Windows.Forms.Button UpdateCpuButton;
         private System.Windows.Forms.Button AddCpuButton;
         private System.Windows.Forms.Button CloseCpuBrowseBtn;
         private System.Windows.Forms.Label labelCpuId;
@@ -375,6 +396,7 @@
         private System.Windows.Forms.TextBox textBoxCpuIntegratedGraphics;
         private System.Windows.Forms.TextBox textBoxCpuPrice;
         private System.Windows.Forms.Label labelCpuSearch;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBoxCpuSearch;
+        private System.Windows.Forms.Button ClearCpuButton;
     }
 }
