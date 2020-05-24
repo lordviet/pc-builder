@@ -51,6 +51,7 @@
     <Compile Include="AppClasses\Cooler.cs" />
     <Compile Include="AppClasses\CPU.cs" />
     <Compile Include="AppClasses\HDD.cs" />
+    <Compile Include="AppClasses\Methods.cs" />
     <Compile Include="AppClasses\Motherboard.cs" />
     <Compile Include="AppClasses\PSU.cs" />
     <Compile Include="AppClasses\RAM.cs" />

@@ -20,52 +20,22 @@ namespace PCB
             InitializeComponent();
         }
 
-        CPU c = new CPU();
-
-        private void AddCpuButton_Click(object sender, EventArgs e)
-        {
-            c.Id = int.Parse(textBoxCpuId.Text);
-            c.Manufacturer = textBoxCpuManufacturer.Text;
-            c.Name = textBoxCpuName.Text;
-            c.Cores = int.Parse(textBoxCpuCores.Text); // Try Parse
-            c.CoreClock = double.Parse(textBoxCpuCoreClock.Text);
-            c.BoostClock = double.Parse(textBoxCpuBoostClock.Text);
-            c.TDP = int.Parse(textBoxCpuTdp.Text);
-            c.IntegratedGraphics = textBoxCpuIntegratedGraphics.Text;
-            c.Price = double.Parse(textBoxCpuPrice.Text);
-
-            bool success = c.Insert(c);
-            DisplayMessage(success, "added");
-        }
-
         private void FormBrowseCpu_Load(object sender, EventArgs e)
         {
-            // Loading the data from the db on load
-            var dt = c.Select("CPU");
+            var dt = c.Select(componentName);
             cpuBrowseGV.DataSource = dt;
         }
 
         private void CloseCpuBrowseBtn_Click(object sender, EventArgs e)
         {
-            // Close the opened form
             Close();
         }
 
-        // Method for clearing the fields
-        public void Clear()
-        {
-            textBoxCpuId.Text = "";
-            textBoxCpuManufacturer.Text = "";
-            textBoxCpuName.Text = "";
-            textBoxCpuCores.Text = "";
-            textBoxCpuCoreClock.Text = "";
-            textBoxCpuBoostClock.Text = "";
-            textBoxCpuTdp.Text = "";
-            textBoxCpuIntegratedGraphics.Text = "";
-            textBoxCpuPrice.Text = "";
-        }
+        CPU c = new CPU();
+        Methods helperMethods = new Methods();
+        string componentName = "CPU";
 
-        private void UpdateCpuButton_Click(object sender, EventArgs e)
+        private void AddOrUpdateColumn(string addOrUpdate)
         {
             c.Id = int.Parse(textBoxCpuId.Text);
             c.Manufacturer = textBoxCpuManufacturer.Text;
@@ -77,78 +47,50 @@ namespace PCB
             c.IntegratedGraphics = textBoxCpuIntegratedGraphics.Text;
             c.Price = double.Parse(textBoxCpuPrice.Text);
 
-            bool success = c.Update(c);
-            DisplayMessage(success, "updated");
+            bool success = addOrUpdate == "added" ? c.Insert(c) : c.Update(c);
+            helperMethods.DisplayMessage(success, addOrUpdate, this, c, componentName, cpuBrowseGV);
         }
 
-        private void CpuBrowseGV_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void AddCpuButton_Click(object sender, EventArgs e)
         {
-            // Get data from the gridview and load it to the textbox
-            int rowIndex = e.RowIndex;
-
-            textBoxCpuId.Text = cpuBrowseGV.Rows[rowIndex].Cells[0].Value.ToString();
-            textBoxCpuManufacturer.Text = cpuBrowseGV.Rows[rowIndex].Cells[1].Value.ToString();
-            textBoxCpuName.Text = cpuBrowseGV.Rows[rowIndex].Cells[2].Value.ToString();
-            textBoxCpuCores.Text = cpuBrowseGV.Rows[rowIndex].Cells[3].Value.ToString();
-            textBoxCpuCoreClock.Text = cpuBrowseGV.Rows[rowIndex].Cells[4].Value.ToString();
-            textBoxCpuBoostClock.Text = cpuBrowseGV.Rows[rowIndex].Cells[5].Value.ToString();
-            textBoxCpuTdp.Text = cpuBrowseGV.Rows[rowIndex].Cells[6].Value.ToString();
-            textBoxCpuIntegratedGraphics.Text = cpuBrowseGV.Rows[rowIndex].Cells[7].Value.ToString();
-            textBoxCpuPrice.Text = cpuBrowseGV.Rows[rowIndex].Cells[8].Value.ToString();
+            AddOrUpdateColumn("added");
         }
 
-        private void ClearCpuButton_Click(object sender, EventArgs e)
+        private void UpdateCpuButton_Click(object sender, EventArgs e)
         {
-            Clear();
+            AddOrUpdateColumn("updated");
         }
 
         private void DeleteCpuButton_Click(object sender, EventArgs e)
         {
             c.Id = int.Parse(textBoxCpuId.Text);
             bool success = c.Delete(c);
-            DisplayMessage(success, "deleted");
+            helperMethods.DisplayMessage(success, "deleted", this, c, componentName, cpuBrowseGV);
         }
 
-        public void DisplayMessage(bool success, string operation)
+        private void ClearCpuButton_Click(object sender, EventArgs e)
         {
-            string msg;
-
-            if (success == true)
-            {
-                msg = $"Successfully {operation}!";
-                // Clear all fields if successful
-                Clear();
-
-                // Load data to the grid
-                var dt = c.Select("CPU");
-                cpuBrowseGV.DataSource = dt;
-            }
-
-            else
-            {
-                msg = "Operation failed, Try Again!";
-            }
-
-            MessageBox.Show(msg);
+            helperMethods.Clear(this);
         }
 
-        static string connectionString = ConfigurationManager
-            .ConnectionStrings["connString"]
-            .ConnectionString;
+        private void CpuBrowseGV_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            TextBox[] textBoxes = { textBoxCpuId,
+                                    textBoxCpuManufacturer,
+                                    textBoxCpuName,
+                                    textBoxCpuCores,
+                                    textBoxCpuCoreClock,
+                                    textBoxCpuBoostClock,
+                                    textBoxCpuTdp,
+                                    textBoxCpuIntegratedGraphics,
+                                    textBoxCpuPrice };
+
+            helperMethods.FillTextBoxes(textBoxes, cpuBrowseGV, e.RowIndex);
+        }
 
         private void TextBoxCpuSearch_TextChanged(object sender, EventArgs e)
         {
-            // Searches db by name and manufacturer
-            string keyword = "'%" + textBoxCpuSearch.Text + "%'";
-
-            var connection = new SqlConnection(connectionString);
-
-            var dataAdapter = new SqlDataAdapter($"SELECT * FROM CPU WHERE Manufacturer LIKE {keyword}" +
-                                                 $"OR Name LIKE {keyword}", connection);
-
-            var dt = new DataTable();
-            dataAdapter.Fill(dt);
-            cpuBrowseGV.DataSource = dt;
+            cpuBrowseGV.DataSource = helperMethods.SearchQuery(textBoxCpuSearch.Text, componentName);
         }
     }
 }
