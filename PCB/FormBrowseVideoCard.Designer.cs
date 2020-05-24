@@ -66,6 +66,7 @@
             this.ClearVideoCardButton.TabIndex = 51;
             this.ClearVideoCardButton.Text = "Clear";
             this.ClearVideoCardButton.UseVisualStyleBackColor = false;
+            this.ClearVideoCardButton.Click += new System.EventHandler(this.ClearVideoCardButton_Click);
             // 
             // textBoxVideoCardSearch
             // 
@@ -76,6 +77,7 @@
             this.textBoxVideoCardSearch.Name = "textBoxVideoCardSearch";
             this.textBoxVideoCardSearch.Size = new System.Drawing.Size(583, 20);
             this.textBoxVideoCardSearch.TabIndex = 50;
+            this.textBoxVideoCardSearch.TextChanged += new System.EventHandler(this.TextBoxVideoCardSearch_TextChanged);
             // 
             // labelVideoCardSearch
             // 
@@ -243,6 +245,7 @@
             this.AddVideoCardButton.TabIndex = 29;
             this.AddVideoCardButton.Text = "Add";
             this.AddVideoCardButton.UseVisualStyleBackColor = false;
+            this.AddVideoCardButton.Click += new System.EventHandler(this.AddVideoCardButton_Click);
             // 
             // UpdateVideoCardButton
             // 
@@ -257,6 +260,7 @@
             this.UpdateVideoCardButton.TabIndex = 28;
             this.UpdateVideoCardButton.Text = "Update";
             this.UpdateVideoCardButton.UseVisualStyleBackColor = false;
+            this.UpdateVideoCardButton.Click += new System.EventHandler(this.UpdateVideoCardButton_Click);
             // 
             // DeleteVideoCardButton
             // 
@@ -271,6 +275,7 @@
             this.DeleteVideoCardButton.TabIndex = 27;
             this.DeleteVideoCardButton.Text = "Delete";
             this.DeleteVideoCardButton.UseVisualStyleBackColor = false;
+            this.DeleteVideoCardButton.Click += new System.EventHandler(this.DeleteVideoCardButton_Click);
             // 
             // videoCardBrowseGV
             // 
@@ -282,6 +287,7 @@
             this.videoCardBrowseGV.Name = "videoCardBrowseGV";
             this.videoCardBrowseGV.Size = new System.Drawing.Size(660, 188);
             this.videoCardBrowseGV.TabIndex = 26;
+            this.videoCardBrowseGV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.VideoCardBrowseGV_RowHeaderMouseClick);
             // 
             // FormBrowseVideoCard
             // 
@@ -313,6 +319,7 @@
             this.Controls.Add(this.videoCardBrowseGV);
             this.Name = "FormBrowseVideoCard";
             this.Text = "FormBrowseVideoCard";
+            this.Load += new System.EventHandler(this.FormBrowseVideoCard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.videoCardBrowseGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

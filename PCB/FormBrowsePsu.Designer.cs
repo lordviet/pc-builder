@@ -62,6 +62,7 @@
             this.ClearPsuButton.TabIndex = 140;
             this.ClearPsuButton.Text = "Clear";
             this.ClearPsuButton.UseVisualStyleBackColor = false;
+            this.ClearPsuButton.Click += new System.EventHandler(this.ClearPsuButton_Click);
             // 
             // AddPsuButton
             // 
@@ -76,6 +77,7 @@
             this.AddPsuButton.TabIndex = 139;
             this.AddPsuButton.Text = "Add";
             this.AddPsuButton.UseVisualStyleBackColor = false;
+            this.AddPsuButton.Click += new System.EventHandler(this.AddPsuButton_Click);
             // 
             // UpdatePsuButton
             // 
@@ -90,6 +92,7 @@
             this.UpdatePsuButton.TabIndex = 138;
             this.UpdatePsuButton.Text = "Update";
             this.UpdatePsuButton.UseVisualStyleBackColor = false;
+            this.UpdatePsuButton.Click += new System.EventHandler(this.UpdatePsuButton_Click);
             // 
             // DeletePsuButton
             // 
@@ -104,6 +107,7 @@
             this.DeletePsuButton.TabIndex = 137;
             this.DeletePsuButton.Text = "Delete";
             this.DeletePsuButton.UseVisualStyleBackColor = false;
+            this.DeletePsuButton.Click += new System.EventHandler(this.DeletePsuButton_Click);
             // 
             // textBoxPsuSearch
             // 
@@ -114,6 +118,7 @@
             this.textBoxPsuSearch.Name = "textBoxPsuSearch";
             this.textBoxPsuSearch.Size = new System.Drawing.Size(583, 20);
             this.textBoxPsuSearch.TabIndex = 136;
+            this.textBoxPsuSearch.TextChanged += new System.EventHandler(this.TextBoxPsuSearch_TextChanged);
             // 
             // labelPsuSearch
             // 
@@ -242,6 +247,7 @@
             this.psuBrowseGV.Name = "psuBrowseGV";
             this.psuBrowseGV.Size = new System.Drawing.Size(660, 188);
             this.psuBrowseGV.TabIndex = 119;
+            this.psuBrowseGV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.PsuBrowseGV_RowHeaderMouseClick);
             // 
             // FormBrowsePsu
             // 
@@ -269,6 +275,7 @@
             this.Controls.Add(this.psuBrowseGV);
             this.Name = "FormBrowsePsu";
             this.Text = "FormBrowsePsu";
+            this.Load += new System.EventHandler(this.FormBrowsePsu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.psuBrowseGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

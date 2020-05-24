@@ -66,6 +66,7 @@
             this.ClearHddButton.TabIndex = 96;
             this.ClearHddButton.Text = "Clear";
             this.ClearHddButton.UseVisualStyleBackColor = false;
+            this.ClearHddButton.Click += new System.EventHandler(this.ClearHddButton_Click);
             // 
             // AddHddButton
             // 
@@ -80,6 +81,7 @@
             this.AddHddButton.TabIndex = 95;
             this.AddHddButton.Text = "Add";
             this.AddHddButton.UseVisualStyleBackColor = false;
+            this.AddHddButton.Click += new System.EventHandler(this.AddHddButton_Click);
             // 
             // UpdateHddButton
             // 
@@ -94,6 +96,7 @@
             this.UpdateHddButton.TabIndex = 94;
             this.UpdateHddButton.Text = "Update";
             this.UpdateHddButton.UseVisualStyleBackColor = false;
+            this.UpdateHddButton.Click += new System.EventHandler(this.UpdateHddButton_Click);
             // 
             // DeleteHddButton
             // 
@@ -108,6 +111,7 @@
             this.DeleteHddButton.TabIndex = 93;
             this.DeleteHddButton.Text = "Delete";
             this.DeleteHddButton.UseVisualStyleBackColor = false;
+            this.DeleteHddButton.Click += new System.EventHandler(this.DeleteHddButton_Click);
             // 
             // textBoxHddSearch
             // 
@@ -118,6 +122,7 @@
             this.textBoxHddSearch.Name = "textBoxHddSearch";
             this.textBoxHddSearch.Size = new System.Drawing.Size(583, 20);
             this.textBoxHddSearch.TabIndex = 92;
+            this.textBoxHddSearch.TextChanged += new System.EventHandler(this.TextBoxHddSearch_TextChanged);
             // 
             // labelHddSearch
             // 
@@ -282,6 +287,7 @@
             this.hddBrowseGV.Name = "hddBrowseGV";
             this.hddBrowseGV.Size = new System.Drawing.Size(660, 188);
             this.hddBrowseGV.TabIndex = 75;
+            this.hddBrowseGV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.HddBrowseGV_RowHeaderMouseClick);
             // 
             // FormBrowseHdd
             // 
@@ -313,6 +319,7 @@
             this.Controls.Add(this.hddBrowseGV);
             this.Name = "FormBrowseHdd";
             this.Text = "FormBrowseHdd";
+            this.Load += new System.EventHandler(this.FormBrowseHdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.hddBrowseGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

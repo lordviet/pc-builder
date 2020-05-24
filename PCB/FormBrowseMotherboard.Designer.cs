@@ -64,6 +64,7 @@
             this.textBoxMbSearch.Name = "textBoxMbSearch";
             this.textBoxMbSearch.Size = new System.Drawing.Size(583, 20);
             this.textBoxMbSearch.TabIndex = 46;
+            this.textBoxMbSearch.TextChanged += new System.EventHandler(this.TextBoxMbSearch_TextChanged);
             // 
             // labelMbSearch
             // 
@@ -246,6 +247,7 @@
             this.mbBrowseGV.Name = "mbBrowseGV";
             this.mbBrowseGV.Size = new System.Drawing.Size(660, 188);
             this.mbBrowseGV.TabIndex = 25;
+            this.mbBrowseGV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.MbBrowseGV_RowHeaderMouseClick);
             // 
             // ClearMbButton
             // 
@@ -260,6 +262,7 @@
             this.ClearMbButton.TabIndex = 50;
             this.ClearMbButton.Text = "Clear";
             this.ClearMbButton.UseVisualStyleBackColor = false;
+            this.ClearMbButton.Click += new System.EventHandler(this.ClearMbButton_Click);
             // 
             // AddMbButton
             // 
@@ -274,6 +277,7 @@
             this.AddMbButton.TabIndex = 49;
             this.AddMbButton.Text = "Add";
             this.AddMbButton.UseVisualStyleBackColor = false;
+            this.AddMbButton.Click += new System.EventHandler(this.AddMbButton_Click);
             // 
             // UpdateMbButton
             // 
@@ -288,6 +292,7 @@
             this.UpdateMbButton.TabIndex = 48;
             this.UpdateMbButton.Text = "Update";
             this.UpdateMbButton.UseVisualStyleBackColor = false;
+            this.UpdateMbButton.Click += new System.EventHandler(this.UpdateMbButton_Click);
             // 
             // DeleteMbButton
             // 
@@ -302,6 +307,7 @@
             this.DeleteMbButton.TabIndex = 47;
             this.DeleteMbButton.Text = "Delete";
             this.DeleteMbButton.UseVisualStyleBackColor = false;
+            this.DeleteMbButton.Click += new System.EventHandler(this.DeleteMbButton_Click);
             // 
             // FormBrowseMotherboard
             // 
@@ -335,6 +341,7 @@
             this.Controls.Add(this.mbBrowseGV);
             this.Name = "FormBrowseMotherboard";
             this.Text = "FormBrowseMotherboard";
+            this.Load += new System.EventHandler(this.FormBrowseMotherboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mbBrowseGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

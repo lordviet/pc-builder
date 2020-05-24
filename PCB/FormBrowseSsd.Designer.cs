@@ -66,6 +66,7 @@
             this.ClearSsdButton.TabIndex = 118;
             this.ClearSsdButton.Text = "Clear";
             this.ClearSsdButton.UseVisualStyleBackColor = false;
+            this.ClearSsdButton.Click += new System.EventHandler(this.ClearSsdButton_Click);
             // 
             // AddSsdButton
             // 
@@ -80,6 +81,7 @@
             this.AddSsdButton.TabIndex = 117;
             this.AddSsdButton.Text = "Add";
             this.AddSsdButton.UseVisualStyleBackColor = false;
+            this.AddSsdButton.Click += new System.EventHandler(this.AddSsdButton_Click);
             // 
             // UpdateSsdButton
             // 
@@ -94,6 +96,7 @@
             this.UpdateSsdButton.TabIndex = 116;
             this.UpdateSsdButton.Text = "Update";
             this.UpdateSsdButton.UseVisualStyleBackColor = false;
+            this.UpdateSsdButton.Click += new System.EventHandler(this.UpdateSsdButton_Click);
             // 
             // DeleteSsdButton
             // 
@@ -108,6 +111,7 @@
             this.DeleteSsdButton.TabIndex = 115;
             this.DeleteSsdButton.Text = "Delete";
             this.DeleteSsdButton.UseVisualStyleBackColor = false;
+            this.DeleteSsdButton.Click += new System.EventHandler(this.DeleteSsdButton_Click);
             // 
             // textBoxSsdSearch
             // 
@@ -118,6 +122,7 @@
             this.textBoxSsdSearch.Name = "textBoxSsdSearch";
             this.textBoxSsdSearch.Size = new System.Drawing.Size(583, 20);
             this.textBoxSsdSearch.TabIndex = 114;
+            this.textBoxSsdSearch.TextChanged += new System.EventHandler(this.TextBoxSsdSearch_TextChanged);
             // 
             // labelSsdSearch
             // 
@@ -282,6 +287,7 @@
             this.ssdBrowseGV.Name = "ssdBrowseGV";
             this.ssdBrowseGV.Size = new System.Drawing.Size(660, 188);
             this.ssdBrowseGV.TabIndex = 97;
+            this.ssdBrowseGV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SsdBrowseGV_RowHeaderMouseClick);
             // 
             // FormBrowseSsd
             // 

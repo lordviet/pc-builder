@@ -35,13 +35,11 @@
             this.textBoxCoolerSearch = new System.Windows.Forms.TextBox();
             this.labelCoolerSearch = new System.Windows.Forms.Label();
             this.textBoxCoolerPrice = new System.Windows.Forms.TextBox();
-            this.textBoxCoolerRadiatorSize = new System.Windows.Forms.TextBox();
             this.textBoxCoolerNoiseLevel = new System.Windows.Forms.TextBox();
             this.textBoxCoolerFanRpm = new System.Windows.Forms.TextBox();
             this.textBoxCoolerName = new System.Windows.Forms.TextBox();
             this.textBoxCoolerManufacturer = new System.Windows.Forms.TextBox();
             this.labelCoolerPrice = new System.Windows.Forms.Label();
-            this.labelCoolerRadiatorSize = new System.Windows.Forms.Label();
             this.labelCoolerNoiseLevel = new System.Windows.Forms.Label();
             this.labelCoolerFanRpm = new System.Windows.Forms.Label();
             this.labelCoolerName = new System.Windows.Forms.Label();
@@ -66,6 +64,7 @@
             this.ClearCoolerButton.TabIndex = 74;
             this.ClearCoolerButton.Text = "Clear";
             this.ClearCoolerButton.UseVisualStyleBackColor = false;
+            this.ClearCoolerButton.Click += new System.EventHandler(this.ClearCoolerButton_Click);
             // 
             // AddCoolerButton
             // 
@@ -80,6 +79,7 @@
             this.AddCoolerButton.TabIndex = 73;
             this.AddCoolerButton.Text = "Add";
             this.AddCoolerButton.UseVisualStyleBackColor = false;
+            this.AddCoolerButton.Click += new System.EventHandler(this.AddCoolerButton_Click);
             // 
             // UpdateCoolerButton
             // 
@@ -94,6 +94,7 @@
             this.UpdateCoolerButton.TabIndex = 72;
             this.UpdateCoolerButton.Text = "Update";
             this.UpdateCoolerButton.UseVisualStyleBackColor = false;
+            this.UpdateCoolerButton.Click += new System.EventHandler(this.UpdateCoolerButton_Click);
             // 
             // DeleteCoolerButton
             // 
@@ -108,6 +109,7 @@
             this.DeleteCoolerButton.TabIndex = 71;
             this.DeleteCoolerButton.Text = "Delete";
             this.DeleteCoolerButton.UseVisualStyleBackColor = false;
+            this.DeleteCoolerButton.Click += new System.EventHandler(this.DeleteCoolerButton_Click);
             // 
             // textBoxCoolerSearch
             // 
@@ -118,6 +120,7 @@
             this.textBoxCoolerSearch.Name = "textBoxCoolerSearch";
             this.textBoxCoolerSearch.Size = new System.Drawing.Size(583, 20);
             this.textBoxCoolerSearch.TabIndex = 70;
+            this.textBoxCoolerSearch.TextChanged += new System.EventHandler(this.TextBoxCoolerSearch_TextChanged);
             // 
             // labelCoolerSearch
             // 
@@ -132,28 +135,21 @@
             // 
             // textBoxCoolerPrice
             // 
-            this.textBoxCoolerPrice.Location = new System.Drawing.Point(400, 255);
+            this.textBoxCoolerPrice.Location = new System.Drawing.Point(383, 204);
             this.textBoxCoolerPrice.Name = "textBoxCoolerPrice";
             this.textBoxCoolerPrice.Size = new System.Drawing.Size(100, 20);
             this.textBoxCoolerPrice.TabIndex = 68;
             // 
-            // textBoxCoolerRadiatorSize
-            // 
-            this.textBoxCoolerRadiatorSize.Location = new System.Drawing.Point(400, 210);
-            this.textBoxCoolerRadiatorSize.Name = "textBoxCoolerRadiatorSize";
-            this.textBoxCoolerRadiatorSize.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCoolerRadiatorSize.TabIndex = 67;
-            // 
             // textBoxCoolerNoiseLevel
             // 
-            this.textBoxCoolerNoiseLevel.Location = new System.Drawing.Point(400, 162);
+            this.textBoxCoolerNoiseLevel.Location = new System.Drawing.Point(383, 114);
             this.textBoxCoolerNoiseLevel.Name = "textBoxCoolerNoiseLevel";
             this.textBoxCoolerNoiseLevel.Size = new System.Drawing.Size(100, 20);
             this.textBoxCoolerNoiseLevel.TabIndex = 66;
             // 
             // textBoxCoolerFanRpm
             // 
-            this.textBoxCoolerFanRpm.Location = new System.Drawing.Point(123, 255);
+            this.textBoxCoolerFanRpm.Location = new System.Drawing.Point(383, 161);
             this.textBoxCoolerFanRpm.Name = "textBoxCoolerFanRpm";
             this.textBoxCoolerFanRpm.Size = new System.Drawing.Size(100, 20);
             this.textBoxCoolerFanRpm.TabIndex = 64;
@@ -177,29 +173,18 @@
             this.labelCoolerPrice.AutoSize = true;
             this.labelCoolerPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelCoolerPrice.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelCoolerPrice.Location = new System.Drawing.Point(296, 258);
+            this.labelCoolerPrice.Location = new System.Drawing.Point(279, 207);
             this.labelCoolerPrice.Name = "labelCoolerPrice";
             this.labelCoolerPrice.Size = new System.Drawing.Size(40, 17);
             this.labelCoolerPrice.TabIndex = 61;
             this.labelCoolerPrice.Text = "Price";
-            // 
-            // labelCoolerRadiatorSize
-            // 
-            this.labelCoolerRadiatorSize.AutoSize = true;
-            this.labelCoolerRadiatorSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCoolerRadiatorSize.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelCoolerRadiatorSize.Location = new System.Drawing.Point(296, 211);
-            this.labelCoolerRadiatorSize.Name = "labelCoolerRadiatorSize";
-            this.labelCoolerRadiatorSize.Size = new System.Drawing.Size(93, 17);
-            this.labelCoolerRadiatorSize.TabIndex = 60;
-            this.labelCoolerRadiatorSize.Text = "Radiator Size";
             // 
             // labelCoolerNoiseLevel
             // 
             this.labelCoolerNoiseLevel.AutoSize = true;
             this.labelCoolerNoiseLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelCoolerNoiseLevel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelCoolerNoiseLevel.Location = new System.Drawing.Point(296, 165);
+            this.labelCoolerNoiseLevel.Location = new System.Drawing.Point(279, 117);
             this.labelCoolerNoiseLevel.Name = "labelCoolerNoiseLevel";
             this.labelCoolerNoiseLevel.Size = new System.Drawing.Size(104, 17);
             this.labelCoolerNoiseLevel.TabIndex = 59;
@@ -210,7 +195,7 @@
             this.labelCoolerFanRpm.AutoSize = true;
             this.labelCoolerFanRpm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelCoolerFanRpm.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelCoolerFanRpm.Location = new System.Drawing.Point(7, 256);
+            this.labelCoolerFanRpm.Location = new System.Drawing.Point(279, 162);
             this.labelCoolerFanRpm.Name = "labelCoolerFanRpm";
             this.labelCoolerFanRpm.Size = new System.Drawing.Size(66, 17);
             this.labelCoolerFanRpm.TabIndex = 57;
@@ -282,6 +267,7 @@
             this.coolerBrowseGV.Name = "coolerBrowseGV";
             this.coolerBrowseGV.Size = new System.Drawing.Size(660, 188);
             this.coolerBrowseGV.TabIndex = 51;
+            this.coolerBrowseGV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.CoolerBrowseGV_RowHeaderMouseClick);
             // 
             // FormBrowseCooler
             // 
@@ -296,13 +282,11 @@
             this.Controls.Add(this.textBoxCoolerSearch);
             this.Controls.Add(this.labelCoolerSearch);
             this.Controls.Add(this.textBoxCoolerPrice);
-            this.Controls.Add(this.textBoxCoolerRadiatorSize);
             this.Controls.Add(this.textBoxCoolerNoiseLevel);
             this.Controls.Add(this.textBoxCoolerFanRpm);
             this.Controls.Add(this.textBoxCoolerName);
             this.Controls.Add(this.textBoxCoolerManufacturer);
             this.Controls.Add(this.labelCoolerPrice);
-            this.Controls.Add(this.labelCoolerRadiatorSize);
             this.Controls.Add(this.labelCoolerNoiseLevel);
             this.Controls.Add(this.labelCoolerFanRpm);
             this.Controls.Add(this.labelCoolerName);
@@ -313,6 +297,7 @@
             this.Controls.Add(this.coolerBrowseGV);
             this.Name = "FormBrowseCooler";
             this.Text = "FormBrowseCooler";
+            this.Load += new System.EventHandler(this.FormBrowseCooler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.coolerBrowseGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -328,13 +313,11 @@
         private System.Windows.Forms.TextBox textBoxCoolerSearch;
         private System.Windows.Forms.Label labelCoolerSearch;
         private System.Windows.Forms.TextBox textBoxCoolerPrice;
-        private System.Windows.Forms.TextBox textBoxCoolerRadiatorSize;
         private System.Windows.Forms.TextBox textBoxCoolerNoiseLevel;
         private System.Windows.Forms.TextBox textBoxCoolerFanRpm;
         private System.Windows.Forms.TextBox textBoxCoolerName;
         private System.Windows.Forms.TextBox textBoxCoolerManufacturer;
         private System.Windows.Forms.Label labelCoolerPrice;
-        private System.Windows.Forms.Label labelCoolerRadiatorSize;
         private System.Windows.Forms.Label labelCoolerNoiseLevel;
         private System.Windows.Forms.Label labelCoolerFanRpm;
         private System.Windows.Forms.Label labelCoolerName;

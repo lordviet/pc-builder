@@ -64,6 +64,7 @@
             this.ClearRamButton.TabIndex = 74;
             this.ClearRamButton.Text = "Clear";
             this.ClearRamButton.UseVisualStyleBackColor = false;
+            this.ClearRamButton.Click += new System.EventHandler(this.ClearRamButton_Click);
             // 
             // AddRamButton
             // 
@@ -78,6 +79,7 @@
             this.AddRamButton.TabIndex = 73;
             this.AddRamButton.Text = "Add";
             this.AddRamButton.UseVisualStyleBackColor = false;
+            this.AddRamButton.Click += new System.EventHandler(this.AddRamButton_Click);
             // 
             // UpdateRamButton
             // 
@@ -92,6 +94,7 @@
             this.UpdateRamButton.TabIndex = 72;
             this.UpdateRamButton.Text = "Update";
             this.UpdateRamButton.UseVisualStyleBackColor = false;
+            this.UpdateRamButton.Click += new System.EventHandler(this.UpdateRamButton_Click);
             // 
             // DeleteRamButton
             // 
@@ -106,6 +109,7 @@
             this.DeleteRamButton.TabIndex = 71;
             this.DeleteRamButton.Text = "Delete";
             this.DeleteRamButton.UseVisualStyleBackColor = false;
+            this.DeleteRamButton.Click += new System.EventHandler(this.DeleteRamButton_Click);
             // 
             // textBoxRamSearch
             // 
@@ -116,6 +120,7 @@
             this.textBoxRamSearch.Name = "textBoxRamSearch";
             this.textBoxRamSearch.Size = new System.Drawing.Size(583, 20);
             this.textBoxRamSearch.TabIndex = 70;
+            this.textBoxRamSearch.TextChanged += new System.EventHandler(this.TextBoxRamSearch_TextChanged);
             // 
             // labelRamSearch
             // 
@@ -262,6 +267,7 @@
             this.ramBrowseGV.Name = "ramBrowseGV";
             this.ramBrowseGV.Size = new System.Drawing.Size(660, 188);
             this.ramBrowseGV.TabIndex = 51;
+            this.ramBrowseGV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.RamBrowseGV_RowHeaderMouseClick);
             // 
             // FormBrowseRam
             // 
@@ -291,6 +297,7 @@
             this.Controls.Add(this.ramBrowseGV);
             this.Name = "FormBrowseRam";
             this.Text = "FormBrowseRam";
+            this.Load += new System.EventHandler(this.FormBrowseRam_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ramBrowseGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
