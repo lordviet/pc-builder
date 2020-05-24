@@ -66,42 +66,49 @@ namespace PCB
         private void BtnBrowseMotherboard_Click(object sender, EventArgs e)
         {
             // Code Logic
+            openChildForm(new FormBrowseMotherboard());
             hideSubmenu();
         }
 
         private void BtnBrowseVideoCard_Click(object sender, EventArgs e)
         {
             // Code Logic
+            openChildForm(new FormBrowseVideoCard());
             hideSubmenu();
         }
 
         private void BtnBrowsePsu_Click(object sender, EventArgs e)
         {
             // Code Logic
+            openChildForm(new FormBrowsePsu());
             hideSubmenu();
         }
 
         private void BtnBrowseRam_Click(object sender, EventArgs e)
         {
             // Code Logic
+            openChildForm(new FormBrowseRam());
             hideSubmenu();
         }
 
         private void BtnBrowseHdd_Click(object sender, EventArgs e)
         {
             // Code Logic
+            openChildForm(new FormBrowseHdd());
             hideSubmenu();
         }
 
         private void BtnBrowseSsd_Click(object sender, EventArgs e)
         {
             // Code Logic
+            openChildForm(new FormBrowseSsd());
             hideSubmenu();
         }
 
         private void BtnBrowseCooler_Click(object sender, EventArgs e)
         {
             // Code Logic
+            openChildForm(new FormBrowseCooler());
             hideSubmenu();
         }
         #endregion

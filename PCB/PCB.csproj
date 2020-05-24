@@ -48,7 +48,56 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppClasses\Component.cs" />
+    <Compile Include="AppClasses\Cooler.cs" />
     <Compile Include="AppClasses\CPU.cs" />
+    <Compile Include="AppClasses\HDD.cs" />
+    <Compile Include="AppClasses\Motherboard.cs" />
+    <Compile Include="AppClasses\PSU.cs" />
+    <Compile Include="AppClasses\RAM.cs" />
+    <Compile Include="AppClasses\SSD.cs" />
+    <Compile Include="AppClasses\VideoCard.cs" />
+    <Compile Include="FormBrowseCooler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBrowseCooler.Designer.cs">
+      <DependentUpon>FormBrowseCooler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBrowseHdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBrowseHdd.Designer.cs">
+      <DependentUpon>FormBrowseHdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBrowseMotherboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBrowseMotherboard.Designer.cs">
+      <DependentUpon>FormBrowseMotherboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBrowsePsu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBrowsePsu.Designer.cs">
+      <DependentUpon>FormBrowsePsu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBrowseRam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBrowseRam.Designer.cs">
+      <DependentUpon>FormBrowseRam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBrowseSsd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBrowseSsd.Designer.cs">
+      <DependentUpon>FormBrowseSsd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBrowseVideoCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBrowseVideoCard.Designer.cs">
+      <DependentUpon>FormBrowseVideoCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +112,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormBrowseCooler.resx">
+      <DependentUpon>FormBrowseCooler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBrowseHdd.resx">
+      <DependentUpon>FormBrowseHdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBrowseMotherboard.resx">
+      <DependentUpon>FormBrowseMotherboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBrowsePsu.resx">
+      <DependentUpon>FormBrowsePsu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBrowseRam.resx">
+      <DependentUpon>FormBrowseRam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBrowseSsd.resx">
+      <DependentUpon>FormBrowseSsd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBrowseVideoCard.resx">
+      <DependentUpon>FormBrowseVideoCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
