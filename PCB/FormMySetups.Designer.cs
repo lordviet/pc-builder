@@ -34,6 +34,7 @@
             this.textBoxSetupId = new System.Windows.Forms.TextBox();
             this.labelSetupId = new System.Windows.Forms.Label();
             this.DeleteSetupButton = new System.Windows.Forms.Button();
+            this.ExportSetupButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.setupsGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,7 +101,7 @@
             // DeleteSetupButton
             // 
             this.DeleteSetupButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeleteSetupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(63)))), ((int)(((byte)(85)))));
+            this.DeleteSetupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.DeleteSetupButton.FlatAppearance.BorderSize = 0;
             this.DeleteSetupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteSetupButton.ForeColor = System.Drawing.Color.White;
@@ -112,12 +113,28 @@
             this.DeleteSetupButton.UseVisualStyleBackColor = false;
             this.DeleteSetupButton.Click += new System.EventHandler(this.DeleteSetupButton_Click);
             // 
+            // ExportSetupButton
+            // 
+            this.ExportSetupButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ExportSetupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(63)))), ((int)(((byte)(85)))));
+            this.ExportSetupButton.FlatAppearance.BorderSize = 0;
+            this.ExportSetupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExportSetupButton.ForeColor = System.Drawing.Color.White;
+            this.ExportSetupButton.Location = new System.Drawing.Point(516, 576);
+            this.ExportSetupButton.Name = "ExportSetupButton";
+            this.ExportSetupButton.Size = new System.Drawing.Size(75, 23);
+            this.ExportSetupButton.TabIndex = 11;
+            this.ExportSetupButton.Text = "Export";
+            this.ExportSetupButton.UseVisualStyleBackColor = false;
+            this.ExportSetupButton.Click += new System.EventHandler(this.ExportSetupButton_Click);
+            // 
             // FormMySetups
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(684, 611);
+            this.Controls.Add(this.ExportSetupButton);
             this.Controls.Add(this.DeleteSetupButton);
             this.Controls.Add(this.textBoxSetupId);
             this.Controls.Add(this.labelSetupId);
@@ -141,5 +158,6 @@
         private System.Windows.Forms.TextBox textBoxSetupId;
         private System.Windows.Forms.Label labelSetupId;
         private System.Windows.Forms.Button DeleteSetupButton;
+        private System.Windows.Forms.Button ExportSetupButton;
     }
 }

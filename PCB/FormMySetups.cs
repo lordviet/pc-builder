@@ -51,5 +51,10 @@ namespace PCB
                 MessageBox.Show("Operation Failed, Try Again!");
             }
         }
+
+        private void ExportSetupButton_Click(object sender, EventArgs e)
+        {
+            helperMethods.ExportToExcel(setupsGV);
+        }
     }
 }
