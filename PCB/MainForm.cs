@@ -122,12 +122,14 @@ namespace PCB
         private void BtnMySetups_Click(object sender, EventArgs e)
         {
             // Code Logic
+            openChildForm(new FormMySetups());
             hideSubmenu();
         }
 
         private void BtnAddSetup_Click(object sender, EventArgs e)
         {
             // Code Logic
+            openChildForm(new FormAddSetup());
             hideSubmenu();
         }
         #endregion
