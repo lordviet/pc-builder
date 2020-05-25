@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.LogOutBtn = new System.Windows.Forms.Button();
+            this.ExitBtn = new System.Windows.Forms.Button();
             this.helpBtn = new System.Windows.Forms.Button();
             this.panelSetupsSubmenu = new System.Windows.Forms.Panel();
             this.btnAddSetup = new System.Windows.Forms.Button();
@@ -47,23 +47,23 @@
             this.btnBrowseCpu = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelSideMenu.SuspendLayout();
             this.panelSetupsSubmenu.SuspendLayout();
             this.panelBrowseSubmenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelChildForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideMenu
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.panelSideMenu.Controls.Add(this.LogOutBtn);
+            this.panelSideMenu.Controls.Add(this.ExitBtn);
             this.panelSideMenu.Controls.Add(this.helpBtn);
             this.panelSideMenu.Controls.Add(this.panelSetupsSubmenu);
             this.panelSideMenu.Controls.Add(this.btnSetups);
@@ -76,21 +76,21 @@
             this.panelSideMenu.Size = new System.Drawing.Size(250, 611);
             this.panelSideMenu.TabIndex = 0;
             // 
-            // LogOutBtn
+            // ExitBtn
             // 
-            this.LogOutBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LogOutBtn.FlatAppearance.BorderSize = 0;
-            this.LogOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogOutBtn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.LogOutBtn.Location = new System.Drawing.Point(0, 635);
-            this.LogOutBtn.Name = "LogOutBtn";
-            this.LogOutBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.LogOutBtn.Size = new System.Drawing.Size(233, 45);
-            this.LogOutBtn.TabIndex = 6;
-            this.LogOutBtn.Text = "Log out";
-            this.LogOutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LogOutBtn.UseVisualStyleBackColor = true;
-            this.LogOutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
+            this.ExitBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ExitBtn.FlatAppearance.BorderSize = 0;
+            this.ExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitBtn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ExitBtn.Location = new System.Drawing.Point(0, 635);
+            this.ExitBtn.Name = "ExitBtn";
+            this.ExitBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ExitBtn.Size = new System.Drawing.Size(233, 45);
+            this.ExitBtn.TabIndex = 6;
+            this.ExitBtn.Text = "Exit";
+            this.ExitBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ExitBtn.UseVisualStyleBackColor = true;
+            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // helpBtn
             // 
@@ -337,6 +337,17 @@
             this.panelLogo.Size = new System.Drawing.Size(233, 100);
             this.panelLogo.TabIndex = 0;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = global::PCB.Properties.Resources._3;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(233, 100);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // panelChildForm
             // 
             this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
@@ -358,18 +369,7 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = global::PCB.Properties.Resources._3;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(233, 100);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -380,15 +380,15 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(950, 600);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "PCB";
             this.panelSideMenu.ResumeLayout(false);
             this.panelSetupsSubmenu.ResumeLayout(false);
             this.panelBrowseSubmenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelChildForm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -405,7 +405,7 @@
         private System.Windows.Forms.Button btnBrowseMotherboard;
         private System.Windows.Forms.Button btnBrowseCpu;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Button LogOutBtn;
+        private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Button helpBtn;
         private System.Windows.Forms.Panel panelSetupsSubmenu;
         private System.Windows.Forms.Button btnAddSetup;

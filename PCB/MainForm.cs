@@ -136,12 +136,14 @@ namespace PCB
         private void HelpBtn_Click(object sender, EventArgs e)
         {
             // Code Logic
+            openChildForm(new FormHelp());
             hideSubmenu();
         }
 
-        private void LogOutBtn_Click(object sender, EventArgs e)
+        private void ExitBtn_Click(object sender, EventArgs e)
         {
             // Code Logic
+            Close();
             hideSubmenu();
         }
 
